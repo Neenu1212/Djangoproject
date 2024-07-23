@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+   <title></title>
+  {% endblock %}
+{% block content %}
+<body>
+<center><div class="col-lg-6">
+					<div class="about_image"><img src="{% static 'images/z.jpg' %}" height="400px" width="500px" alt=""></div>
+				</div></center>
+<br>
+<br>
+<br>
+<br>
+<center><h1>OUR COLLECTIONS</h1></center>
+  <p>An e-commerce website is one that allows people to buy and sell physical goods, services, and digital products over the internet rather than at a brick-and-mortar location. Through an e-commerce website, a business can process orders, accept payments, manage shipping and logistics, and provide customer service..eccomerce (or electronic commerce) is the buying and selling of goods or services on the Internet. It encompasses a wide variety of data, systems and tools for online buyers and sellers, including mobile shopping and online payment encryption.</p>
+<br>
+
+
+
+<div class="container-fluid">
+       <div class="row ">
+              {% for i in item  %}
+              <div class="col"><div class="card" style="...">
+
+  <img src="{{i.image.url}}" class="card-img-top" height="300px" width="100px" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{i.title}}</h5>
+    <p class="card-text">{{i.desc}}</p>
+      <a href="{% url 'shop:allproducts' i.id %}" class="btn btn-primary">Go somewhere</a>
+
+  </div>
+</div>
+              </div>{% endfor %}
+              </div>
+</div>
+{% endblock  %}
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+body{
+color:yellow;
+background-color:red;
+
+}
+
+h1{
+text-align:center
+}
+
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand
+{
+font-weight:bold;
+font-size:20px;
+color:yellow
+}
+.bg-light
+{
+background-color: gray !important
+}
+.form-control
+{
+width:75%;
+}

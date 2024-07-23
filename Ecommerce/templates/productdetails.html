@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+       <div class="container" style="margin-left:200px;margin-top:100px;">
+              <div class="row">
+                  <div class="col-sm-4"><img src="{{p.image.url}}" height="300px" width="300px"></div>
+
+
+                  <div class="col-sm-6">
+
+  <div class="card-body mx-auto" style="position:relative;">
+
+    <h5 class="card-title ">{{p.title}}</h5>
+      <p class="card-text">price:{{p.price}}</p>
+      <p class="card-text"> Available stock: {{p.stock}}</p>
+      {% if user.is_superuser == True %}
+         {% if p.stock > 0 %}
+            <h3 class="text-success">Product in Stock</h3>
+            <a style="text-decoration:none" href="{% url 'admin:index' %}" class="btn_1">Add Stock</a>
+         {% else %}
+
+            <h3 class="text-danger">Out Of Stock</h3>
+            <a style="text-decoration:none" href="{% url 'admin:index' %}" class="btn_1">Add Stock</a>
+
+         {% endif %}
+      {% else %}
+         {% if p.stock > 0 %}
+              <a style="..." href="{% url 'cart:add_to_cart' p.id %}" class="btn_1">Add To Cart</a>
+         {% else %}
+              <h3 class="text-danger">Out Of Stock</h3>
+         {% endif %}
+      {% endif %}
+    <h3>Product Details :<i style=".. " class="fa fa-indent"></i></h3>
+      <p  style="text-align:justify;">{{p.desc}}</p>
+  </div>
+</div>
+                  </div>
+
+              </div>
+       </div>
+
+{% endblock %}

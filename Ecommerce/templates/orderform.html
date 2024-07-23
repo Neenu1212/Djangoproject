@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<center>
+<h1>ENTER DETAILS</h1>
+<form method="post" enctype="multipart/form-data" style="max-width:400px">
+    {% csrf_token %}
+  <div class="mb-3">
+    <label class="form-label">PHONE NO:</label>
+    <input type="text" class="form-control"   name="phone" placeholder="">
+
+  </div>
+     <div class="mb-3">
+    <label class="form-label">DELIVERY ADDRESS</label>
+    <input  type="text" class="form-control" name="a" placeholder="">
+
+  </div>
+      <div class="mb-3">
+    <label class="form-label">pin</label>
+    <input  type="text" class="form-control" name="n" placeholder="">
+
+  </div>
+     <div class="mb-3">
+    <input type="submit" class="form-control" >
+
+  </div>
+
+
+</form></center>
+{% endblock  %}
+
+</body>
+</html>
